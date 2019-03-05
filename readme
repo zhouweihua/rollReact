@@ -1,1 +1,2 @@
-readme home
+1. 演示amd 以及 es6 common不同的方案打包文件
+  - 其中amd动态引用js的方法
