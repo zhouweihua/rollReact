@@ -205,7 +205,10 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log(\"assistCommon start\")\nmodule.exports = {\nkey: \"assistCommon key\"\n};\n\n//# sourceURL=webpack:///./demo/assistCommon.js?");
+console.log("assistCommon start")
+module.exports = {
+key: "assistCommon key"
+};
 
 /***/ }),
 
@@ -217,7 +220,11 @@ eval("console.log(\"assistCommon start\")\nmodule.exports = {\nkey: \"assistComm
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconsole.log(\"assistEs6 start\")\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n    key: \"assistEs6 key\"\n});\n\n//# sourceURL=webpack:///./demo/assistEs6.js?");
+__webpack_require__.r(__webpack_exports__);
+console.log("assistEs6 start")
+/* harmony default export */ __webpack_exports__["default"] = ({
+    key: "assistEs6 key"
+});
 
 /***/ }),
 
@@ -229,8 +236,34 @@ eval("__webpack_require__.r(__webpack_exports__);\nconsole.log(\"assistEs6 start
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _assistEs6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assistEs6 */ \"./demo/assistEs6.js\");\nconsole.log(1111)\nconsole.log(2222)\n\n/*****   assistAmd   ******/\n__webpack_require__.e(/*! AMD require */ 0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./assistAmd */ \"./demo/assistAmd.js\")]; (function(assistAmd) {\n    console.log(assistAmd.key)\n }).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}).catch(__webpack_require__.oe);\n\n/*****   assistCommon   ******/\nvar assistCommon = __webpack_require__(/*! ./assistCommon */ \"./demo/assistCommon.js\");\nconsole.log(assistCommon.key)\n\n/*****   assistEs6   ******/\n\nconsole.log(_assistEs6__WEBPACK_IMPORTED_MODULE_0__[\"default\"].key)\n\n//# sourceURL=webpack:///./demo/index.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _assistEs6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assistEs6 */ "./demo/assistEs6.js");
+console.log(1111)
+console.log(2222)
+
+/*****   assistAmd   ******/
+__webpack_require__.e(/*! AMD require */ 0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./assistAmd */ "./demo/assistAmd.js")]; (function(assistAmd) {
+    console.log(assistAmd.key)
+ }).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}).catch(__webpack_require__.oe);
+
+/*****   assistCommon   ******/
+var assistCommon = __webpack_require__(/*! ./assistCommon */ "./demo/assistCommon.js");
+console.log(assistCommon.key)
+
+/*****   assistEs6   ******/
+
+console.log(_assistEs6__WEBPACK_IMPORTED_MODULE_0__["default"].key)
+
+/*****   babel   ******/
+var pets = ['cat', 'dog', 'bat'];
+
+console.log(pets.includes('cat'));
+// expected output: true
+
+console.log(pets.includes('at'));
+// expected output: false
 
 /***/ })
 
 /******/ });
+//# sourceMappingURL=demoIndex.js.map
