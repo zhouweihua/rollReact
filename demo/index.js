@@ -18,13 +18,11 @@ console.log(assistEs6.key)
 /*
 * 例如，默认情况下babel可以将箭头函数，class等语法转换为ES5兼容的形式
 * 但是却不能转换Map，Set，Promise等新的全局对象，这时候就需要使用polyfill去模拟这些新特性
-* 那其实逻辑有三层了：babel  -> polyfill -> 
-*
+* 那其实逻辑有三层了：babel-loader -> babelrc -> preset -> polyfill -> runtime
 */
-var pets = ['cat', 'dog', 'bat'];
-
-console.log(pets.includes('cat'));
-// expected output: true
-
-console.log(pets.includes('at'));
-// expected output: false
+let func = () => { console.log('babel function arrow')};
+const NUM = 45;
+let arr = [1,3,4];
+let arrB = arr.map(item => item * 2);
+arr.includes(1);
+console.log('Set', new Set(arrB));

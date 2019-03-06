@@ -11,10 +11,10 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
-    chunkFilename: '[name].js'
+    filename: '[name].[chunkhash].js',
+    chunkFilename: '[name].[chunkhash].js'
   },
-  devtool: 'source-map',
+  devtool: false,
   resolve: {
     extensions: ['.js']
   },
