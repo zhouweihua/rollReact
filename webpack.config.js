@@ -18,6 +18,16 @@ module.exports = {
   resolve: {
     extensions: ['.js']
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader'
+        }
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
