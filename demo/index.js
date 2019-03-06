@@ -19,6 +19,8 @@ console.log(assistEs6.key)
 * 例如，默认情况下babel可以将箭头函数，class等语法转换为ES5兼容的形式
 * 但是却不能转换Map，Set，Promise等新的全局对象，这时候就需要使用polyfill去模拟这些新特性
 * 那其实逻辑有三层了：babel-loader -> babelrc -> preset -> polyfill -> runtime
+* 当没babel是空对象{}的时候 let const 都没有转化
+* 当加入preset的时候 let -> var; => -> function;
 */
 let func = () => { console.log('babel function arrow')};
 const NUM = 45;

@@ -1,7 +1,9 @@
-// {
-//     "presets": [
-//       ["env"],
-//       ["react"]
-//     ]
-// }
-{}
+{
+    "presets": [
+      ["@babel/preset-env", {
+        "targets": {
+          // "browsers": ["> 2%", "last 2 versions"],
+        },
+      }]
+    ]
+}
