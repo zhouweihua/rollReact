@@ -21,10 +21,19 @@ console.log(assistEs6.key)
 * 那其实逻辑有三层了：babel-loader -> babelrc -> preset -> polyfill -> runtime
 * 当没babel是空对象{}的时候 let const 都没有转化
 * 当加入preset的时候 let -> var; => -> function;
+* 当加入polyfill的时候 代码扩大的好多
 */
+import '@babel/polyfill'
+
 let func = () => { console.log('babel function arrow')};
 const NUM = 45;
 let arr = [1,3,4];
 let arrB = arr.map(item => item * 2);
 arr.includes(1);
 console.log('Set', new Set(arrB));
+
+let p = new Promise((resolve) => {
+    resolve('Promise test')
+}).then(data => {
+    console.log('resolve data', data)
+})
