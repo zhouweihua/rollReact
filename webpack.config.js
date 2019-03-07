@@ -1,11 +1,11 @@
 const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const isDev = process.env.NODE_ENV || 'development'
-const cssLoaders = [MiniCssExtractPlugin.loader]
+// const isDev = process.env.NODE_ENV || 'development'
+// const cssLoaders = [MiniCssExtractPlugin.loader]
 
 module.exports = {
-  mode: 'development',
+  // mode: 'development',
   entry: {
     demoIndex: './demo/index.js'
   },
@@ -16,7 +16,7 @@ module.exports = {
   },
   devtool: false,
   resolve: {
-    extensions: ['.js']
+    extensions: ['.js', '.jsx'],
   },
   module: {
     rules: [
