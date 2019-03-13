@@ -3,6 +3,7 @@
       "@babel/preset-env", "@babel/preset-react"
     ],
     "plugins": [
-      "@babel/plugin-proposal-class-properties"
+      ["@babel/plugin-proposal-decorators", { "legacy": true }], //解析装饰器
+      "@babel/plugin-proposal-class-properties",
     ]
 }

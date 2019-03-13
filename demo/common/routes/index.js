@@ -6,6 +6,9 @@ import Home from '../../pages/Home'
 import About from '../../pages/About'
 import Topics from '../../pages/Topics'
 
+
+const prefix = process.env.prefix
+
 export default class RouterCmp extends React.PureComponent {
   static propTypes = {
     history: PropTypes.object.isRequired
@@ -17,13 +20,22 @@ export default class RouterCmp extends React.PureComponent {
     console.log(location)
     return (
       <Router history={history}>
-        <Switch>
-          <Route exact path="/about" component={About}/>
-          <Route exact path="/topics" component={Topics}/>
-          <Route exact path="/" component={Home}/>
-          <Redirect to="/" />
-        </Switch>
+        <div>
+          <Route exact path={`/${prefix}`} component={Home} />
+          <Route render={({ location, history: { action } }) =>
+            <div className={this.getClassNames(action)}>
+              <Switch>
+                <Route exact path={`/${prefix}/about`} component={About}/>
+                <Route exact path={`/${prefix}/topics`} component={Topics}/>
+              </Switch>
+            </div>
+          } />
+        </div>
       </Router>
     )
+  }
+  getClassNames (action) {
+    console.log(action)
+    return ''
   }
 }

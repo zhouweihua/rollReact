@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const isDev = process.env.NODE_ENV || 'development'
@@ -33,6 +34,12 @@ module.exports = {
       filename: 'index.html',
       template: path.join(__dirname, 'demo/index.html'),
       chunks: ['demoIndex']
-    })
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        // NODE_ENV: JSON.stringify(env),
+        prefix: "'myPro'",
+      },
+    }),
   ]
 }

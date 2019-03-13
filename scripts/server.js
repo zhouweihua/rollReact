@@ -8,7 +8,7 @@ var fs=require("fs");
 app.get('*', function (request, response){
   if (request.path.endsWith('.js') || request.path.endsWith('.css') || request.path.endsWith('.less') || request.path.endsWith('.png') || request.path.endsWith('.jpeg') || request.path.endsWith('.jpg')) {
 
-    fs.exists(path.resolve(__dirname, '../dist', request.path.substr(1, request.path.length - 1)), function(exists){
+    fs.exists(path.resolve(__dirname, '../dist', request.path.substr(7, request.path.length - 1)), function(exists){
       if(exists){
          console.log("文件存在")
       }
@@ -17,7 +17,7 @@ app.get('*', function (request, response){
       }
     })
   
-    response.sendFile(path.resolve(__dirname, '../dist', request.path.substr(1, request.path.length - 1)))
+    response.sendFile(path.resolve(__dirname, '../dist', request.path.substr(7, request.path.length - 1)))
     return
   }
   // console.log(request)
