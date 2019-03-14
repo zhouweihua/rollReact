@@ -23,10 +23,10 @@ export default class Home extends React.Component {
   }
   render() {
     const { test } = this.props
-    console.log(test)
+    console.log('home', test)
     return (
       <div>
-        <p>{test}</p>
+        <p style={{ fontSize: '30px' }}>{test}</p>
         <div onClick={this.handleChangeTest}>点击</div>
       </div>
     )
