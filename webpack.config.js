@@ -6,7 +6,7 @@ const isDev = process.env.NODE_ENV || 'development'
 const cssLoaders = [MiniCssExtractPlugin.loader]
 
 module.exports = {
-  mode: 'development',
+  // mode: 'development',
   entry: {
     demoIndex: './demo/index.js'
   },
@@ -15,9 +15,10 @@ module.exports = {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js'
   },
-  devtool: false,
+  devtool: 'cheap-module-eval-source-map',
   resolve: {
     extensions: ['.js', '.jsx'],
+    modules: [ 'node_modules', './demo' ],
   },
   module: {
     rules: [

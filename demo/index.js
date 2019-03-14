@@ -47,11 +47,11 @@ import '@babel/polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import AppContext from './common/context'
+import AppContext from 'common/context'
 
-import createStore from './common/store'
-import AppRouter from './common/routes'
-import history from './common/history'
+import createStore from 'common/store'
+import AppRouter from 'common/routes'
+import history from 'common/history'
 
 const store = createStore()
 
