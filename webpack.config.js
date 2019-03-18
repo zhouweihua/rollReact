@@ -2,11 +2,9 @@ const path = require('path')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const isDev = process.env.NODE_ENV || 'development'
-const cssLoaders = [MiniCssExtractPlugin.loader]
 
 module.exports = {
-  // mode: 'development',
+  mode: 'development',
   entry: {
     demoIndex: './demo/index.js'
   },
@@ -28,9 +26,42 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
+      {
+        test: /\.(less|css)$/,
+        exclude: /node_modules/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              camelCase: true,
+              // modules: true
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss'
+            }
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
+      }
     ]
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.join(__dirname, 'demo/index.html'),

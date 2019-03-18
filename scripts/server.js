@@ -7,7 +7,7 @@ var fs=require("fs");
 // 的 index.html 中处理任何一个 route
 app.get('*', function (request, response){
   if (request.path.endsWith('.js') || request.path.endsWith('.css') || request.path.endsWith('.less') || request.path.endsWith('.png') || request.path.endsWith('.jpeg') || request.path.endsWith('.jpg')) {
-
+    console.log(request.path)
     fs.exists(path.resolve(__dirname, '../dist', request.path.substr(7, request.path.length - 1)), function(exists){
       if(exists){
          console.log("文件存在")

@@ -41,6 +41,7 @@
 // })
 
 /*****   react   ******/
+import 'common/style/common.less'
 
 import '@babel/polyfill'
 

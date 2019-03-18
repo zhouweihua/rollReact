@@ -1,3 +1,5 @@
+import './about.less'
+
 import React from 'react'
 
 export default class About extends React.Component {
@@ -5,7 +7,7 @@ export default class About extends React.Component {
     console.log('About')
     return (
       <div>
-        <p>{'About'}</p>
+        <p className="testAbout">{'About'}</p>
       </div>
     )
   }

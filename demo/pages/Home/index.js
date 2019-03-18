@@ -1,3 +1,5 @@
+import './home.less'
+
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -26,8 +28,8 @@ export default class Home extends React.Component {
     console.log('home', test)
     return (
       <div>
-        <p style={{ fontSize: '30px' }}>{test}</p>
-        <div onClick={this.handleChangeTest}>点击</div>
+        <p style={{ fontSize: '30px' }} className="testCommon">{test}</p>
+        <div onClick={this.handleChangeTest} className="test">点击x</div>
       </div>
     )
   }
