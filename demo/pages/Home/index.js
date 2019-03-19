@@ -29,7 +29,7 @@ export default class Home extends React.Component {
     return (
       <div>
         <p style={{ fontSize: '30px' }} className="testCommon">{test}</p>
-        <div onClick={this.handleChangeTest} className="test">点击x</div>
+        <div onClick={this.handleChangeTest} className="testHome">点击x</div>
       </div>
     )
   }
