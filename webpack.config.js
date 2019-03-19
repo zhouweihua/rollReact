@@ -48,7 +48,10 @@ module.exports = {
           {
             loader: 'less-loader',
             options: {
-              sourceMap: true
+              sourceMap: true,
+              modifyVars: {
+                testModifyVars: "#FFF000"
+              }
             }
           }
         ]
